@@ -1,6 +1,8 @@
 #!/bin/sh
+wp config create --dbname=mariadb --dbuser=root --dbpass=sercurity --dbhost=mariadb --allow-root
+wp core install --url=$domainName --title=$siteTitle --admin_user=$adminUser --admin_password=$adminPass --admin_email=$emailAdm --allow-root
+wp user create $otherUserName $otherUserEmail --role=$othersRole --user_pass=$othersPass --allow-root
 
-curl -o wordpress.tar.gz https://wordpress.org
-tar -xzf wordpress.tar.gz
-cd wordpress/
-php
+
+echo $'\nlisten = 9000\n' >> /etc/php/8.4/fpm/pool.d/www.conf
+exec php-fpm8.4 -F

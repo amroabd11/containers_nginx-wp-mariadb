@@ -1,6 +1,11 @@
-FROM debian
-RUN apt update -y && apt upgrade -y && apt install -y php curl unzip
-RUN mkdir /var/www/html/wordpress 
-COPY ./conf/autoWordpress.sh .
+FROM debian:latest
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y php wget unzip php-fpm php-mysqli
+RUN mkdir -p /var/www/html/wordpress 
+RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp
+WORKDIR /var/www/html/wordpress
+RUN wp core download --allow-root
+
+COPY ./conf/autoWordpress.sh autoWordpress.sh 
 RUN chmod +x autoWordpress.sh
-ENTRYPOINT ["./autoWordpress.sh"]
+ENTRYPOINT ["/var/www/html/wordpress/autoWordpress.sh"]
