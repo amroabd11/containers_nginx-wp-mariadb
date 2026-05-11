@@ -1,0 +1,9 @@
+services:
+	nginx:
+	wordpress:
+	mariadb:
+networks:
+	netofContainers
+volumes:
+	wpress:
+	db:
