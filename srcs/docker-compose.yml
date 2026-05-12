@@ -1,9 +1,56 @@
 services:
-	nginx:
-	wordpress:
-	mariadb:
+ nginx:
+     build: ./services/nginx
+     ports:
+       - 443:443
+     expose:
+       - 443
+     depends_on:
+       - wordpress
+     volumes:
+       - wpress:/var/www/html/wordpress
+     networks:
+       - containersNet
+     restart: always
+ wordpress:
+    build: ./services/wordpress
+    depends_on:
+      - mariadb
+    volumes:
+      - wpress:/var/www/html/wordpress
+    expose:
+      - 9000
+    networks:
+      - containersNet
+    env_file:
+      - .env
+    restart: always
+ mariadb:
+    build: ./services/mariadb
+    env_file:
+      - .env 
+    expose:
+      - 3306
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - containersNet
+    restart: always
 networks:
-	netofContainers
+   containersNet:
+     driver: bridge
 volumes:
-	wpress:
-	db:
+   wpress:
+     driver: local #docker stores the volume's data in a subdir under /var/lib/docker/volumes/db
+     driver_opts:
+       type: none
+       device: /home/aamraouy/data/wp
+       o: bind
+
+   db:
+     driver: local #docker stores the volume's data in a subdir under /var/lib/docker/volumes/db
+     driver_opts:
+       type: none
+       device: /home/aamraouy/data/db
+       o: bind
+
