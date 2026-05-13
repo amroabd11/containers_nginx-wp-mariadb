@@ -1,8 +1,9 @@
 services:
  nginx:
      build: ./services/nginx
+     image: nginx:4mr0
      ports:
-       - 443:443
+       - "4443:443"
      expose:
        - 443
      depends_on:
@@ -14,6 +15,7 @@ services:
      restart: always
  wordpress:
     build: ./services/wordpress
+    image: wordpress:4mr0
     depends_on:
       - mariadb
     volumes:
@@ -27,6 +29,7 @@ services:
     restart: always
  mariadb:
     build: ./services/mariadb
+    image: mariadb:4mr0
     env_file:
       - .env 
     expose:
