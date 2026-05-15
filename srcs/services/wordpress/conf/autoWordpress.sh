@@ -1,9 +1,13 @@
 #!/bin/sh
 mkdir -p /run/php
+cd /var/www/html/wordpress
+wp core download --allow-root
 
 chmod -R 775 /etc/php/
-echo -e "\nlisten=0.0.0.0:9000\n" >> /etc/php/8.4/fpm/pool.d/www.conf
-
+echo  "\nlisten=0.0.0.0:9000\n" >> /etc/php/8.4/fpm/pool.d/www.conf
+echo  "----------\n"
+cat /etc/php/8.4/fpm/pool.d/www.conf
+echo  "----------\n"
 echo "this is the db $MYDB"
 
 wp config create --dbname="$MYDB" --dbuser="$DB_USER" --dbpass="$DB_PASS" --dbhost=mariadb:3306 --allow-root
