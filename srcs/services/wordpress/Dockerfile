@@ -3,6 +3,7 @@ RUN apt-get update -y && apt-get upgrade -y && apt-get install -y php wget unzip
 RUN mkdir -p /var/www/html/wordpress 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp
+RUN chown -R www-data:www-data /var/www/html/wordpress
 WORKDIR /var/www/html/wordpress
 RUN wp core download --allow-root
 
