@@ -9,4 +9,6 @@ GRANT ALL PRIVILEGES ON "$MYDB".* TO "$DB_USER"@'%';
 FLUSH PRIVILEGES;
 EOF
 
-exec mysqld --user=root --bind-address=0.0.0.0 --init-file=/db.sql
+cat db.sql
+
+exec mysqld --user=root --bind-address=0.0.0.0 --port=3306 --init-file=/db.sql
