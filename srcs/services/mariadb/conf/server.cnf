@@ -1,0 +1,10 @@
+[mysqld]
+
+user = mysql
+datadir = /var/lib/mysql
+pid-file = /run/mysqld/mysqld.pid
+basedir = /usr
+port = 3306
+
+bind-address = 0.0.0.0
+log-error = /var/log/mysql/error.log

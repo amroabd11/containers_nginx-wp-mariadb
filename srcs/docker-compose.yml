@@ -34,8 +34,8 @@ services:
     image: mariadb:4mr0
     env_file:
       - .env 
-#    expose:
-#      - 3306
+    expose:
+      - 3306
     volumes:
       - db:/var/lib/mysql
     networks:
@@ -50,7 +50,7 @@ volumes:
      driver: local #docker stores the volume's data in a subdir under /var/lib/docker/volumes/db
      driver_opts:
        type: none
-       device: /home/aamraouy/testDATA/wp
+       device: /home/aamraouy/data/wp
        o: bind
 
    db:
@@ -58,6 +58,6 @@ volumes:
      driver: local #docker stores the volume's data in a subdir under /var/lib/docker/volumes/db
      driver_opts:
        type: none
-       device: /home/aamraouy/testDATA/db
+       device: /home/aamraouy/data/mariadb
        o: bind
 

@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:bookworm
 
 RUN apt update -y&&apt upgrade -y && apt install nginx openssl -y
 COPY ./conf/default.conf /etc/nginx/nginx.conf 
