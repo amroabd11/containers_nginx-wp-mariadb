@@ -58,6 +58,6 @@ volumes:
      driver: local #docker stores the volume's data in a subdir under /var/lib/docker/volumes/db
      driver_opts:
        type: none
-       device: /home/aamraouy/data/mariadb
+       device: /home/aamraouy/data/testdb
        o: bind
 

@@ -7,6 +7,6 @@ RUN chown -R www-data:www-data /var/www/html/wordpress
 RUN chmod -R 775 /var/www/html/wordpress
 
 COPY ./conf/autoWordpress.sh / 
-COPY ./conf/config.php /var/www/html/wordpress/
+COPY ./conf/config.php /
 RUN chmod +x ./autoWordpress.sh
 ENTRYPOINT ["./autoWordpress.sh"]
