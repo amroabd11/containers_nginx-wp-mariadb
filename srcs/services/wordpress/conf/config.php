@@ -6,6 +6,7 @@ define('DB_USER', '4mr0');
 define('DB_CHARSET','utf8');
 define('DB_COLLATE','');
 define('WP_DEBUG',false);
+$table_prefix='wp_4mr0';
 
 
 define('AUTH_KEY',         'SVB1mP5(z8(vS%>Zr!Y=,$O-{+QHZ9v9q8Qy+%~,DC5$&;-|[p0:xobzmi{$B.SN');
@@ -17,8 +18,8 @@ define('SECURE_AUTH_SALT', 'Sq}8Pjj&F]=X=*i}&z)Mx]5M?i5[Xmm/g.Df:xH9s<k`znW?44:2
 define('LOGGED_IN_SALT',   'N}cA=rAvXrIP34BP*6Evw0v7{-&->5]i%+83V|wgG3i}GW}mZJnpXRVQ}IcG+Jb6');
 define('NONCE_SALT',       '<SD[]6}~%OFqkvPn&<[w){s=}On<|vesg>hgb|WKA]/6 *|CA1u.#r9-v(ovIIZT');
 
-if( !defined('ABSPATH') )
-	define('ABSPATH', dirname('__FILE__') . '/');
-require_once('ABSPATH', 'wp-settings.php');
+#if( !defined('ABSPATH') )
+#	define('ABSPATH', dirname('__FILE__') . '/');
+#require_once('ABSPATH', 'wp-settings.php');
 
 
