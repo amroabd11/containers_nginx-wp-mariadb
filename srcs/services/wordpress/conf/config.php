@@ -1,7 +1,7 @@
 <?php
 define('DB_HOST', 'mariadb');
 define('DB_NAME', 'mariadb');
-define('DB_PASS', '4mr0_none');
+define('DB_PASSWORD', '4mr0_none');
 define('DB_USER', '4mr0');
 define('DB_CHARSET','utf8');
 define('DB_COLLATE','');

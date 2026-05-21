@@ -27,7 +27,7 @@ echo "this is the version *******"
 ls /etc/php/
 
 #wp config create --dbname="mariadb" --dbuser="4mr0" --dbpass="4mr0_none" --dbhost="mariadb" --allow-root
-wp  --path=/var/www/html/wordpress --config=/var/www/html/wordpress/wp-config.php core install --url="$domainName" --title="$siteTitle" --admin_user="$adminUser" --admin_password="$adminPass" --admin_email="$emailAdm" --allow-root
+wp  core install --url="$domainName" --title="$siteTitle" --admin_user="$adminUser" --admin_password="$adminPass" --admin_email="$emailAdm" --allow-root
 #wp user create "$otherUserName" "$otherUserEmail" --role="$othersRole" --user_pass="$othersPass" --allow-root
 
 exec php-fpm8.2 -F
