@@ -1,7 +1,7 @@
 
 wp_dir=/home/aamraouy/data/wp
 db_dir=/home/aamraouy/data/db
-compose=docker-compose --file srcs/docker-compose.yml
+compose=docker-compose -f srcs/docker-compose.yml
 
 all:build
 	@mkdir -p $(wp_dir)
@@ -10,4 +10,8 @@ all:build
 build:
 	$(compose) build
 	$(compose) up
-
+clean:
+	docker system prune -y
+fclean:clean
+	docker volume rm $(docker volume ls -q)
+	docker network rm $(docker network ls)	

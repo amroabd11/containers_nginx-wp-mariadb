@@ -8,6 +8,14 @@ define('DB_COLLATE','');
 define('WP_DEBUG',false);
 $table_prefix='wp_4mr0';
 
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] ==='https'){
+	$_SERVER['HTTPS'] ='on';
+}
+
+define('WP_HOME', 'https://aamraouy.42.fr/');
+define('WP_SITEURL', 'https://aamraouy.42.fr/');
+
+
 
 define('AUTH_KEY',         'SVB1mP5(z8(vS%>Zr!Y=,$O-{+QHZ9v9q8Qy+%~,DC5$&;-|[p0:xobzmi{$B.SN');
 define('SECURE_AUTH_KEY',  'f|!Wp|.e3l>T-6hoZoB7<D}Bs%|~Yw8L+Mj/27b)ofchn50)!I%z;D}&&#pN1>eO');
