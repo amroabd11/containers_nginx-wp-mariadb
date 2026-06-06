@@ -13,7 +13,7 @@ the core infrastructure consists of three services :</br>
 requires some code to be executed in the backend .</br>
 **Mariadb** provides persistent database storage for wordpress.</br>
 
-> # Instructions:
+# Instructions:
 > - ```make``` : this rule in makefile calls all, and does the building and running of the whole infra.
 > - ```make clean``` : this rule runs system prune -f to delete all the containers dependencies such images and running ps.
 > - ```make fclean``` : this rule calls clean and rm volumes and networks .
