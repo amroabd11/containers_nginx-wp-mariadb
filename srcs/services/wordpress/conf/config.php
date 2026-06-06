@@ -16,7 +16,6 @@ define('WP_HOME', $domain);
 define('WP_SITEURL', $domain);
 
 
-
 define('AUTH_KEY',         'SVB1mP5(z8(vS%>Zr!Y=,$O-{+QHZ9v9q8Qy+%~,DC5$&;-|[p0:xobzmi{$B.SN');
 define('SECURE_AUTH_KEY',  'f|!Wp|.e3l>T-6hoZoB7<D}Bs%|~Yw8L+Mj/27b)ofchn50)!I%z;D}&&#pN1>eO');
 define('LOGGED_IN_KEY',    'LaD*K%8(*~|T|(1J[L*,PN$T$H_2z+0`YE4N-#%G7;AFiED)D|QoB<eM?(Q9pD=I');
