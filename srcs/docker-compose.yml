@@ -47,7 +47,7 @@ networks:
 volumes:
    wpress:
      name: wpress
-     driver: local #docker stores the volume's data in a subdir under /var/lib/docker/volumes/db
+     driver: local 
      driver_opts:
        type: none
        device: /home/kali/data/wp
@@ -55,7 +55,7 @@ volumes:
 
    db:
      name: db
-     driver: local #docker stores the volume's data in a subdir under /var/lib/docker/volumes/db
+     driver: local
      driver_opts:
        type: none
        device: /home/kali/data/db

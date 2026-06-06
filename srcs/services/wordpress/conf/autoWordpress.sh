@@ -1,6 +1,5 @@
 #!/bin/sh
 mkdir -p /run/php
-#mv -f config.php /var/www/html/wordpress/wp-config.php
 cd /var/www/html/wordpress
 
 until mariadb-admin ping -h mariadb -u 4mr0 -p"4mr0_none" --silent ; do
@@ -15,22 +14,15 @@ else
 fi
 
 chmod -R 775 /etc/php/
-#if [ -f "wp-config-sample.php" ] ;then
-#	mv wp-config-sample.php wp-config.php 
-#fi
-#if [ -f "config.php" ]; then
-#	mv config.php wp-config.php 
-#fi
+
 echo  "\nlisten=0.0.0.0:9000" >> /etc/php/8.2/fpm/pool.d/www.conf
 
-echo "this is the version *******"
-ls /etc/php/
 
-#wp config create --dbname="mariadb" --dbuser="4mr0" --dbpass="4mr0_none" --dbhost="mariadb" --allow-root
 if [ ! -f "wp-config.php" ]; then
-#wp  core install --url="https://aamraouy.42.fr" --title="$siteTitle" --admin_user="$adminUser" --admin_password="$adminPass" --admin_email="$emailAdm" --allow-root
-#wp user create "$otherUserName" "$otherUserEmail" --role="$othersRole" --user_pass="$othersPass" --allow-root
-	mv /config.php /var/www/html/wordpress/wp-config.php
+	wp config create --dbname="$MYDB" --dbuser="$DB_USER" --dbpass="$DB_PASS" --dbhost="$DB_HOST" --allow-root
+	wp  core install --url="$domain" --title="$siteTitle" --admin_user="$adminUser" --admin_password="$adminPass" --admin_email="$emailAdm" --allow-root
+	#mv /config.php /var/www/html/wordpress/wp-config.php
+	wp user create "$otherUserName" "$otherUserEmail" --role="$othersRole" --user_pass="$othersPass" --allow-root
 else
 	echo "wordpress already installed and configured"
 fi
