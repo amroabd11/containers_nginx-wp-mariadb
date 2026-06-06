@@ -1,12 +1,20 @@
 <?php
-define('DB_HOST', 'mariadb');
-define('DB_NAME', 'mariadb');
-define('DB_PASSWORD', '4mr0_none');
-define('DB_USER', '4mr0');
+define('DB_HOST', $DB_HOST);
+define('DB_NAME', $MYDB);
+define('DB_PASSWORD', $DB_PASS);
+define('DB_USER', $DB_USER);
 define('DB_CHARSET','utf8');
 define('DB_COLLATE','');
 define('WP_DEBUG',false);
 $table_prefix='wp_4mr0';
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] ==='https'){
+	$_SERVER['HTTPS'] ='on';
+}
+
+define('WP_HOME', $domain);
+define('WP_SITEURL', $domain);
+
 
 
 define('AUTH_KEY',         'SVB1mP5(z8(vS%>Zr!Y=,$O-{+QHZ9v9q8Qy+%~,DC5$&;-|[p0:xobzmi{$B.SN');
