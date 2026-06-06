@@ -19,5 +19,5 @@ down:
 clean:
 	docker system prune -f
 fclean:clean
-	docker volume rm $(docker volume ls -q)
-	docker network rm $(docker network ls -q)	
+	docker volume rm $$(docker volume ls -q)
+	docker network rm $$(docker network ls -q)	
