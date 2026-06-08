@@ -1,6 +1,5 @@
 # This project has been created as part of the 42 curriculum by aamraouy
 
-## note : 'https://docs.docker.com/reference/compose-file/' --> this website is a doc about docker compose file
 
 # Description :
 Inception is a project from 42 school .
