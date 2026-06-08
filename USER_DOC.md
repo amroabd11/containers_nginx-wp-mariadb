@@ -14,8 +14,8 @@ cmd: `` docker ps ``
 > list logs of each container by running `` docker logs <container-name>``
 also u may inspect a container and thats by using the inspect arg within docker.
 ## running and stoping the project 
-`` make run`` or just ``make``
-``make stop`` or ctr + c
+`` make up`` or just ``make``.
+``make stop`` or ctr + c.
 check the makefile to understand the functionality of each command.
 
 ## run a cmd from outside of a container
