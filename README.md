@@ -1,4 +1,4 @@
-# This project has been created as part of the 42 curriculum by aamraouy
+*This project has been created as part of the 42 curriculum by aamraouy*
 
 
 # Description :
@@ -25,6 +25,10 @@ requires some code to be executed in the backend .</br>
 > - https://blog.nginx.org/blog/what-are-namespaces-cgroups-how-do-they-work
 > - this guy has 3 parts where he explains containers - https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504
 > - https://github.com/compose-spec/compose-spec for docker compose   
+> - https://dev.to/piyushjajoo/how-docker-actually-works-a-deep-dive-into-the-internals-501d
+
+> - link for pwn: **https://yanglingxi1993.github.io/dirty_pagetable/dirty_pagetable.html** .
+> - link for pwn: **https://pwning.tech/nftables/**.
 
 
 # Project Description:
